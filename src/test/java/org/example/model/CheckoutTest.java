@@ -1,8 +1,8 @@
 package org.example.model;
 
-import org.example.business.BuyOneGetOneFreeOffer;
+import org.example.business.itemOffer.BuyOneGetOneFreeOffer;
 import org.example.business.OfferEngine;
-import org.example.business.ThreeForTwoOffer;
+import org.example.business.itemOffer.ThreeForTwoOffer;
 import org.example.shop.Checkout;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;

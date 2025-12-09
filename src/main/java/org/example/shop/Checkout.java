@@ -30,19 +30,29 @@ public class Checkout {
                 .map(itemMaster::getItem)
                 .collect(Collectors.groupingBy(i -> i, Collectors.counting()));
 
+        Map<Item, Integer> intCounts = counts.entrySet().stream()
+                .collect(Collectors.toMap(Map.Entry::getKey, e -> e.getValue().intValue()));
+
+
         int total = 0;
 
         for (Map.Entry<Item, Long> entry : counts.entrySet()) {
             Item item = entry.getKey();
             int quantity = entry.getValue().intValue();
 
-            int discountedQty = offerEngine.apply(item, quantity);
+            int discountedQty = offerEngine.applyItemOffer(item, quantity);
             int price = priceMaster.getPrice(item);
 
             total += discountedQty * price;
         }
 
-        return total;
+        // combine Saving
+
+        int calculateCombineOffer = offerEngine.calculateCombineOffer(intCounts, priceMaster);
+
+        int finalTotal = total - calculateCombineOffer;
+
+        return finalTotal;
     }
 
     public static String formatPrice(int pence) {

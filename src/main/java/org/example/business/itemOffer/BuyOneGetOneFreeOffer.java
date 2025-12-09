@@ -1,4 +1,4 @@
-package org.example.business;
+package org.example.business.itemOffer;
 
 public class BuyOneGetOneFreeOffer implements Offer {
 

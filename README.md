@@ -27,3 +27,8 @@ Checkout calculates totals
 ✔ Dependency Inversion
 
 - Checkout depends on abstractions (Offer, Master classes)
+
+- Combine Offer (Apple + Banana Offer)
+
+The CombineOffer applies when an Apple and a Banana are purchased together.
+The cheapest item in the pair is free.

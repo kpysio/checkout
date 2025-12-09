@@ -1,7 +1,7 @@
 package org.example.model;
 
-import org.example.business.BuyOneGetOneFreeOffer;
-import org.example.business.Offer;
+import org.example.business.itemOffer.BuyOneGetOneFreeOffer;
+import org.example.business.itemOffer.Offer;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

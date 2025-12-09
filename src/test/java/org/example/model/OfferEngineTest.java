@@ -1,7 +1,7 @@
 package org.example.model;
 
 import org.example.business.OfferEngine;
-import org.example.business.ThreeForTwoOffer;
+import org.example.business.itemOffer.ThreeForTwoOffer;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -14,7 +14,7 @@ public class OfferEngineTest {
 
         engine.registerOffer(orange, new ThreeForTwoOffer());
 
-        assertEquals(2, engine.apply(orange, 3));
+        assertEquals(2, engine.applyItemOffer(orange, 3));
     }
 
     @Test
@@ -22,6 +22,6 @@ public class OfferEngineTest {
         Item banana = new Item("Banana");
         OfferEngine engine = new OfferEngine();
 
-        assertEquals(5, engine.apply(banana, 5)); // No offer → unchanged
+        assertEquals(5, engine.applyItemOffer(banana, 5)); // No offer → unchanged
     }
 }

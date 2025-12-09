@@ -1,6 +1,6 @@
-package org.example.business;
+package org.example.business.itemOffer;
 
-import org.example.business.Offer;
+import org.example.business.itemOffer.Offer;
 
 public class ThreeForTwoOffer implements Offer {
 
